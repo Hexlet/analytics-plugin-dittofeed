@@ -1,4 +1,4 @@
-# Analytics Plugin for Yandex Metrika
+# Analytics Plugin for Dittofeed
 
 ## Overview
 
