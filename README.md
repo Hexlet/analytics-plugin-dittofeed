@@ -1,36 +1,37 @@
-# @hexlet/analytics-plugin-dittofeed
+# Analytics Plugin for Yandex Metrika
 
-Плагин для [analytics](https://github.com/DavidWells/analytics), внутри использует `@dittofeed/sdk-web`.
-Поддерживает `identify`, `track`, `page`.
+## Overview
+
+Analytics plugin for [analytics](https://github.com/DavidWells/analytics), powered by [`@dittofeed/sdk-web`](https://www.npmjs.com/package/@dittofeed/sdk-web).
+Supports `identify`, `track`, and `page` methods.
 
 
-## Установка
+## Installation
 ```bash
 npm i @hexlet/analytics-plugin-dittofeed
+```
 
-
-## Использование
+## Usage
 
 ```ts
 import Analytics from 'analytics';
 import dittofeed from '@hexlet/analytics-plugin-dittofeed';
 
-// создаём analytics-инстанс
 const analytics = Analytics({
   app: 'test-app',
   plugins: [
     dittofeed({
       sdkInit: {
-        writeKey: 'Basic abcdefg...', // Публичный ключ из Dittofeed dashboard
-        // apiHost: 'https://app.dittofeed.com' // можно переопределить для self-host
+        writeKey: 'Basic abcdefg...', // Public write key from Dittofeed dashboard
+        // apiHost: 'https://app.dittofeed.com' // Can be overridden for self-host
       },
-      enable: process.env.NODE_ENV === 'production', // включаем только в проде
+      enable: process.env.NODE_ENV === 'production', // Enable only in production
     }),
   ],
 });
 
 // page
-analytics.page(); // событие page (по умолчанию с document.title)
+analytics.page(); // page event (defaults with document.title)
 
 // identify
 analytics.identify('user_123', {
