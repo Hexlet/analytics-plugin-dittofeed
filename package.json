@@ -1,6 +1,6 @@
 {
   "name": "@hexlet/analytics-plugin-dittofeed",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "Dittofeed plugin for DavidWells Analytics",
   "main": "dist/index.js",
@@ -45,7 +45,10 @@
   "publishConfig": {
     "access": "public"
   },
-  "keywords": ["analytics", "dittofeed"],
+  "keywords": [
+    "analytics",
+    "dittofeed"
+  ],
   "author": "Hexlet",
   "license": "MIT",
   "bugs": {
