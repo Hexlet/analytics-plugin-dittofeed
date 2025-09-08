@@ -1,0 +1,55 @@
+{
+  "name": "@hexlet/analytics-plugin-dittofeed",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Dittofeed plugin for DavidWells Analytics",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc --build",
+    "release": "release-it"
+  },
+  "peerDependencies": {
+    "analytics": "^0.8.16"
+  },
+  "devDependencies": {
+    "@release-it/conventional-changelog": "^10.0.1",
+    "globals": "^16.1.0",
+    "jiti": "^2.4.2",
+    "npm-check-updates": "^18.0.1",
+    "oxlint": "^0.16.10",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@dittofeed/sdk-web": "*",
+    "release-it": "^19.0.2"
+  },
+  "release-it": {
+    "hooks": {
+      "before:release": "npm run build"
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "conventionalcommits",
+        "infile": "CHANGELOG.md"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hexlet/analytics-plugin-dittofeed.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": ["analytics", "dittofeed"],
+  "author": "Hexlet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Hexlet/analytics-plugin-dittofeed/issues"
+  },
+  "homepage": "https://github.com/Hexlet/analytics-plugin-dittofeed#readme"
+}
