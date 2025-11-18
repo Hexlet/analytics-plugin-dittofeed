@@ -45,3 +45,20 @@ analytics.track('Made Purchase', {
   price: 49.9,
 });
 ```
+
+## Publishing
+
+Releases are managed through [`release-it`](https://github.com/release-it/release-it) (see `make release`). The flow now publishes the package to both npm and GitHub Packages:
+
+1. Ensure the build passes (`npm run build`).
+2. Export authentication tokens before running the release command:
+   ```bash
+   export NPM_TOKEN=xxxx           # Token for registry.npmjs.org
+   export NODE_AUTH_TOKEN=yyyy     # PAT for npm.pkg.github.com
+   ```
+   Optionally wire them in `.npmrc`:
+   ```
+   //registry.npmjs.org/:_authToken=${NPM_TOKEN}
+   //npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}
+   ```
+3. Run `make release` (or `npx release-it`). This will build, publish to npm, then automatically run `npm run publish:github` which publishes the same tarball to `https://npm.pkg.github.com`.
