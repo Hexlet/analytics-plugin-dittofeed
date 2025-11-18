@@ -1,6 +1,6 @@
 {
   "name": "@hexlet/analytics-plugin-dittofeed",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "description": "Dittofeed plugin for DavidWells Analytics",
   "main": "dist/index.js",
